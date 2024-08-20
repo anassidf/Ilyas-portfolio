@@ -14,10 +14,21 @@ export default {
       },
 
       colors: {
-        'dark-gray': '#1e1e1e'
+        'dark-gray': '#1e1e1e',
+        'light-gray':'#3f3f3f',
+        'dark-yellow': '#BFAF9B',
+        'lighter-gray': '#A6A6A6'
+      }, 
+      backgroundImage: {
+        'landing-page-image': "url('/src/assets/landing-page-bg.jpg')",
+        'clients-banner-image': "url('/src/assets/clients-banner.jpg')"
       }
     
+    
     },
+  letterSpacing:{
+    'menu-spacing':'15px'
+  }
   },
   plugins: [],
 }
