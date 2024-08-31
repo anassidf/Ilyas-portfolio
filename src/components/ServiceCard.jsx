@@ -11,6 +11,7 @@ const ServiceCard = ({cardIcon, serviceName, serviceDescription}) => {
             <p className='mt-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, consectetur? consectetur?consectetur?consectetur?consectetur?consectetur?</p>
             <div className='absolute bottom-0  w-[75%] bg-white h-2'></div>
       </div>
+      
     </div>
   )
 }
