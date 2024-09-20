@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 import React, {useEffect} from 'react'
 import Logo from '../assets/logo.svg'
 import { Link } from 'react-router-dom'
+=======
+import React, { useEffect, useState } from "react";
+import Logo from "../assets/logo.png";
+import { Link, useLocation } from "react-router-dom";
+>>>>>>> Stashed changes
 
 const Navbar = () => {
 
@@ -52,6 +58,7 @@ const Navbar = () => {
 
     }
   return (
+<<<<<<< Updated upstream
     <nav id='navBar' className='bg-dark-gray h-[76px] p-[20px] lg:px-20 text-white flex items-center'>
        
       
@@ -66,6 +73,31 @@ const Navbar = () => {
                 <span className="line__one bg-white w-[35px] h-[3px] rounded-[5px] block transition-transform ease-in-out duration-500"></span>
                 <span className="line__two bg-white w-[35px] h-[3px] rounded-[5px] block translate-y-[7px] transition-transform ease-in-out duration-500"></span>
                 <span className="line__three bg-white w-[35px] h-[3px] rounded-[5px] block translate-y-[14px] transition-transform ease-in-out duration-500 "></span>
+=======
+    <nav
+      id="navBar"
+      className="bg-dark-gray h-[76px] p-[20px] lg:px-20 text-white flex items-center"
+    >
+      <div className="w-full flex justify-between items-center">
+        <div className="w-full lg:w-fit flex items-center justify-between">
+          <Link to="/" exact="true">
+            <img
+              src={Logo}
+              alt="site's logo"
+              className="w-[100px] h-fit cursor-pointer object-contain"
+            />
+          </Link>
+
+          <div
+            className="menu relative cursor-pointer justify-center lg:hidden h-[20px]"
+            onClick={menuToggler}
+            id="menu"
+          >
+            <span className="line__one bg-white w-[35px] h-[3px] rounded-[5px] block transition-transform ease-in-out duration-500"></span>
+            <span className="line__two bg-white w-[35px] h-[3px] rounded-[5px] block translate-y-[7px] transition-transform ease-in-out duration-500"></span>
+            <span className="line__three bg-white w-[35px] h-[3px] rounded-[5px] block translate-y-[14px] transition-transform ease-in-out duration-500 "></span>
+          </div>
+>>>>>>> Stashed changes
         </div>
         </div>
         
