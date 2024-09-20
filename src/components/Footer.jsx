@@ -1,19 +1,18 @@
-<<<<<<< Updated upstream
-import React from 'react'
-=======
 import React, {useState, useEffect} from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import Logo from "../assets/logo.png";
 import EmailIcon from '../assets/email-icon.svg'
 import LinkedinIcon from '../assets/linkedin-icon.svg'
->>>>>>> Stashed changes
 
 const Footer = () => {
+  const [isHomePage, setIsHomePage] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    location.pathname === "/" ? setIsHomePage(true) : setIsHomePage(false);
+  }, [location.pathname]);
+
   return (
-<<<<<<< Updated upstream
-    <footer className='min-h-[200px] bg-dark-gray text-white p-[20px]'>
-      this is the footer
-=======
     <footer className="min-h-[350px] bg-dark-gray text-white  p-[20px] lg:px-20 relative">
       <div className='flex flex-col items-start lg:flex-row lg:justify-between lg:m-[40px] lg:mx-[100px]'>
         <div className='flex flex-col'>
@@ -110,14 +109,13 @@ const Footer = () => {
           <img
             src={Logo}
             alt="website's logo"
-            className="w-[100px] h-fit cursor-pointer object-contain"
+            className="w-[100px] h-fit object-contain cursor-pointer"
           />
         </Link>
         <h2>2024 All Rights Reserved.</h2>
       </div>
->>>>>>> Stashed changes
     </footer>
-  )
+  );
 }
 
 export default Footer

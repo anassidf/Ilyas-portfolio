@@ -7,8 +7,8 @@ import ExtremeLabLogo from "../assets/xtremelab-image.png";
 const Collaborators = () => {
   return (
     <div className="flex justify-center">
-      <marquee behavior="" direction="left" className="mt-28 " width="80%">
-        <div className="flex  justify-between  items-center w-full">
+      <marquee behavior="" direction="left" className="mt-28 " width="95%">
+        <div className="flex  space-x-20 lg:space-x-0 justify-between  items-center w-full">
           <img
             src={EnderargeLogo}
             alt="enderarge logo"
