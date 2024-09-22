@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Link, useLocation } from 'react-router-dom';
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo.svg";
 import EmailIcon from '../assets/email-icon.svg'
 import LinkedinIcon from '../assets/linkedin-icon.svg'
 
@@ -109,7 +109,7 @@ const Footer = () => {
           <img
             src={Logo}
             alt="website's logo"
-            className="w-[100px] h-fit object-contain cursor-pointer"
+            className="w-[100px] h-[80px] object-contain cursor-pointer"
           />
         </Link>
         <h2>2024 All Rights Reserved.</h2>
