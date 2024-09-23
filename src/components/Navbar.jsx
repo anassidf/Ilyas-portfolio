@@ -171,14 +171,7 @@ const Navbar = () => {
                Services
               </a>
               
-              <a
-                href="#"
-                className="w-full pb-[10px] mb-[10px] border-b-[3px]  border-solid"
-                onClick={menuRemover}
-              >
-                {" "}
-                Contact us
-              </a>
+              
             </>
           ) : (
             <>
@@ -206,14 +199,7 @@ const Navbar = () => {
                Services
               </Link>
               
-              <Link
-                to="/"
-                className="w-full pb-[10px] mb-[10px] border-b-[3px]  border-solid"
-                onClick={menuRemover}
-              >
-                {" "}
-                Contact us
-              </Link>
+           
             </>
           )}
         </div>
