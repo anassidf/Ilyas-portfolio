@@ -33,7 +33,7 @@ const Services = () => {
       cardIcon: LegalIcon,
       serviceName: "Legal Representation Services",
       serviceDescription:
-        "Our Legal Representation Services provide expert guidance and support to protect your rights and navigate legal challenges with confidence.",
+        "At ME Business Development Consultancy, we specialize in providing professional representation services for foreign companies looking to establish or expand their presence in the UAE. With our in-depth knowledge of the local market, business culture, and regulatory landscape, we help businesses navigate the complexities of entering the UAE market.",
     },
     {
       cardIcon: AnalysisIcon,
