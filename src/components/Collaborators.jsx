@@ -1,4 +1,4 @@
-import EnderargeLogo from "../assets/enderarge-image.png";
+import YigisanLogo from "../assets/yigitsan-image.svg";
 import LampLogo from "../assets/lamp-image.png";
 import FoodSoftLogo from "../assets/foodsoft-image.png";
 import HarmonicLogo from "../assets/harmonic-image.svg";
@@ -10,8 +10,8 @@ const Collaborators = () => {
       <marquee behavior="" direction="left" className="mt-28 " width="95%">
         <div className="flex  space-x-20 lg:space-x-0 justify-between  items-center w-full">
           <img
-            src={EnderargeLogo}
-            alt="enderarge logo"
+            src={YigisanLogo}
+            alt="Yigisan logo"
             className="w-auto h-[40px] object-contain grayscale"
           />
           <img

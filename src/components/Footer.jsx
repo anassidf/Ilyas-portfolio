@@ -3,11 +3,22 @@ import { Link, useLocation } from 'react-router-dom';
 import Logo from "../assets/logo.svg";
 import EmailIcon from '../assets/email-icon.svg'
 import LinkedinIcon from '../assets/linkedin-icon.svg'
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
+import EmailBlackIcon from '../assets/black-email-icon.svg'
+import PhoneIcon from '../assets/phone-icon.svg'
 
 const Footer = () => {
   const [isHomePage, setIsHomePage] = useState(false);
   const location = useLocation();
-
+  const [size, setSize] = React.useState(null);
+  const handleOpen = (value) => setSize(value);
+  
   useEffect(() => {
     location.pathname === "/" ? setIsHomePage(true) : setIsHomePage(false);
   }, [location.pathname]);
@@ -70,6 +81,12 @@ const Footer = () => {
               >
                 Services
               </a>
+              <a
+                className='hover:opacity-80 transition-all ease-in-out duration-300 cursor-pointer'
+                onClick={() => handleOpen("xs")} variant="gradient"   
+              >
+                Contact info
+              </a>
              
             </>
           ) : (
@@ -95,6 +112,12 @@ const Footer = () => {
               >
                 Services
               </Link>
+              <Link
+                className='hover:opacity-80 transition-all ease-in-out duration-200'
+                onClick={() => handleOpen("xs")} variant="gradient"
+              >
+                Contact info
+              </Link>
             </>
           )}
         </div>
@@ -114,6 +137,61 @@ const Footer = () => {
         </Link>
         <h2>2024 All Rights Reserved.</h2>
       </div>
+      <Dialog
+        open={
+          size === "xs" ||
+          size === "sm" ||
+          size === "md" ||
+          size === "lg" ||
+          size === "xl" ||
+          size === "xxl"
+        }
+        size={size || "md"}
+        handler={handleOpen}
+      >
+        <DialogHeader>Contact information</DialogHeader>
+        
+        <DialogBody className="space-y-6">
+         
+         
+         <a href="mailto:contact@meconsultancygroup.com" title='send email to contact@meconsultancygroup.com' className="text-black flex space-x-2 items-center">
+         <img
+            src={EmailBlackIcon}
+            alt="company's email"
+            className="w-[29px] h-[29px] cursor-pointer"
+          />
+          <span>contact@meconsultancygroup.com</span>
+         
+          </a>
+         <div href="mailto:contact@meconsultancygroup.com" title='send email to contact@meconsultancygroup.com' className="text-black flex space-x-2 items-center">
+         <img
+            src={PhoneIcon}
+            alt="company's email"
+            className="w-[29px] h-[29px] cursor-pointer"
+          />
+          <span>+90 534 551 54 17</span>
+         
+          </div>
+         
+        </DialogBody>
+        <DialogFooter>
+          <Button
+            variant="text"
+            color="red"
+            onClick={() => handleOpen(null)}
+            className="mr-1"
+          >
+            <span>Cancel</span>
+          </Button>
+          <Button
+            variant="gradient"
+            color="green"
+            onClick={() => handleOpen(null)}
+          >
+            <span>Confirm</span>
+          </Button>
+        </DialogFooter>
+      </Dialog>
     </footer>
   );
 }

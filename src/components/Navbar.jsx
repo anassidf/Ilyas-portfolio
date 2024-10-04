@@ -1,11 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../assets/logo.svg";
 import { Link, useLocation } from "react-router-dom";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
+import EmailIcon from '../assets/black-email-icon.svg'
+import PhoneIcon from '../assets/phone-icon.svg'
+
 
 const Navbar = () => {
   const [isHomePage, setIsHomePage] = useState(false);
   const location = useLocation();
   const hash = location.hash;
+  const [size, setSize] = React.useState(null);
+  const handleOpen = (value) => setSize(value);
 
   useEffect(() => {
     location.pathname === "/" ? setIsHomePage(true) : setIsHomePage(false);
@@ -72,22 +84,29 @@ const Navbar = () => {
 
   };
   return (
-    <nav id='navBar' className='bg-dark-gray h-[76px] p-[20px] lg:px-20 text-white flex items-center'>
-       
-      
-       <div className='w-full flex justify-between items-center'>
-        
-        <div className='w-full lg:w-fit flex items-center justify-between'>
-         <Link to="/" exact>
-            <img src={Logo} alt="site's logo" className='w-[100px] h-fit object-contain cursor-pointer' />
-         </Link>
-          
-        <div className="menu relative cursor-pointer justify-center lg:hidden h-[20px]" onClick={menuToggler} id='menu'>
-                <span className="line__one bg-white w-[35px] h-[3px] rounded-[5px] block transition-transform ease-in-out duration-500"></span>
-                <span className="line__two bg-white w-[35px] h-[3px] rounded-[5px] block translate-y-[7px] transition-transform ease-in-out duration-500"></span>
-                <span className="line__three bg-white w-[35px] h-[3px] rounded-[5px] block translate-y-[14px] transition-transform ease-in-out duration-500 "></span>
+    <nav
+      id="navBar"
+      className="bg-dark-gray h-[76px] p-[20px] lg:px-20 text-white flex items-center"
+    >
+      <div className="w-full flex justify-between items-center">
+        <div className="w-full lg:w-fit flex items-center justify-between">
+          <Link to="/" exact>
+            <img
+              src={Logo}
+              alt="site's logo"
+              className="w-[100px] h-fit object-contain cursor-pointer"
+            />
+          </Link>
 
-        </div>
+          <div
+            className="menu relative cursor-pointer justify-center lg:hidden h-[20px]"
+            onClick={menuToggler}
+            id="menu"
+          >
+            <span className="line__one bg-white w-[35px] h-[3px] rounded-[5px] block transition-transform ease-in-out duration-500"></span>
+            <span className="line__two bg-white w-[35px] h-[3px] rounded-[5px] block translate-y-[7px] transition-transform ease-in-out duration-500"></span>
+            <span className="line__three bg-white w-[35px] h-[3px] rounded-[5px] block translate-y-[14px] transition-transform ease-in-out duration-500 "></span>
+          </div>
         </div>
 
         {/* desktop menu */}
@@ -112,6 +131,13 @@ const Navbar = () => {
               >
                 Services
               </a>
+              <a
+                className='relative after:content-[""] after:absolute after:h-[2px] after:left-0 after:bottom-[-3px] after:w-0 after:bg-white after:transition-all ease-in-out after:duration-500 hover:after:w-full cursor-pointer'
+                onClick={() => handleOpen("xs")}
+                variant="gradient"
+              >
+                Contact info
+              </a>
             </>
           ) : (
             <>
@@ -133,6 +159,14 @@ const Navbar = () => {
               >
                 Services
               </Link>
+              <Link
+                to="#"
+                className='relative after:content-[""] after:absolute after:h-[2px] after:left-0 after:bottom-[-3px] after:w-0 after:bg-white after:transition-all ease-in-out after:duration-500 hover:after:w-full'
+                onClick={() => handleOpen("xs")}
+                variant="gradient"
+              >
+                Contact info
+              </Link>
             </>
           )}
         </div>
@@ -147,7 +181,6 @@ const Navbar = () => {
         <div className="flex flex-col w-full h-full items-center text-[15px]">
           {isHomePage ? (
             <>
-              
               <a
                 href="#landing-section"
                 className="w-full pb-[10px] mb-[10px] border-b-[3px]  border-solid"
@@ -168,14 +201,19 @@ const Navbar = () => {
                 className="w-full pb-[10px] mb-[10px] border-b-[3px]  border-solid"
                 onClick={menuRemover}
               >
-               Services
+                Services
               </a>
-              
-              
+              <a
+                href="#"
+                className="w-full pb-[10px] mb-[10px] border-b-[3px]  border-solid"
+                onClick={() => handleOpen("xs")}
+                variant="gradient"
+              >
+                Contact info
+              </a>
             </>
           ) : (
             <>
-              
               <Link
                 to="/"
                 className="w-full pb-[10px] mb-[10px] border-b-[3px]  border-solid"
@@ -196,14 +234,74 @@ const Navbar = () => {
                 className="w-full pb-[10px] mb-[10px] border-b-[3px]  border-solid"
                 onClick={menuRemover}
               >
-               Services
+                Services
               </Link>
-              
-           
+              <Link
+                to="#"
+                className="w-full pb-[10px] mb-[10px] border-b-[3px]  border-solid"
+                onClick={() => handleOpen("xs")}
+                variant="gradient"
+              >
+                Contact info
+              </Link>
             </>
           )}
         </div>
       </aside>
+      <Dialog
+        open={
+          size === "xs" ||
+          size === "sm" ||
+          size === "md" ||
+          size === "lg" ||
+          size === "xl" ||
+          size === "xxl"
+        }
+        size={size || "md"}
+        handler={handleOpen}
+      >
+        <DialogHeader>Contact information</DialogHeader>
+        <DialogBody className="space-y-6">
+         
+         
+         <a href="mailto:contact@meconsultancygroup.com" title='send email to contact@meconsultancygroup.com' className="text-black flex space-x-2 items-center">
+         <img
+            src={EmailIcon}
+            alt="company's email"
+            className="w-[29px] h-[29px] cursor-pointer"
+          />
+          <span>contact@meconsultancygroup.com</span>
+         
+          </a>
+         <div href="mailto:contact@meconsultancygroup.com" title='send email to contact@meconsultancygroup.com' className="text-black flex space-x-2 items-center">
+         <img
+            src={PhoneIcon}
+            alt="company's email"
+            className="w-[29px] h-[29px] cursor-pointer"
+          />
+          <span>+90 534 551 54 17</span>
+         
+          </div>
+         
+        </DialogBody>
+        <DialogFooter>
+          <Button
+            variant="text"
+            color="red"
+            onClick={() => handleOpen(null)}
+            className="mr-1"
+          >
+            <span>Cancel</span>
+          </Button>
+          <Button
+            variant="gradient"
+            color="green"
+            onClick={() => handleOpen(null)}
+          >
+            <span>Done</span>
+          </Button>
+        </DialogFooter>
+      </Dialog>
     </nav>
   );
 };
