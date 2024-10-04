@@ -160,7 +160,7 @@ const Footer = () => {
             alt="company's email"
             className="w-[29px] h-[29px] cursor-pointer"
           />
-          <span className="text-[12px] lg:text-[16px]">contact@meconsultancygroup.com</span>
+          <span className="text-[9px] lg:text-[16px]">contact@meconsultancygroup.com</span>
          
           </a>
          <div href="mailto:contact@meconsultancygroup.com" title='send email to contact@meconsultancygroup.com' className="text-black flex space-x-2 items-center">
@@ -169,7 +169,7 @@ const Footer = () => {
             alt="company's email"
             className="w-[29px] h-[29px] cursor-pointer"
           />
-          <span className="text-[12px] lg:text-[16px]">+90 534 551 54 17</span>
+          <span className="text-[9px] lg:text-[16px]">+90 534 551 54 17</span>
          
           </div>
          
