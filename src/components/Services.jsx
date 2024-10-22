@@ -8,6 +8,7 @@ import CyberIcon from "../assets/cyber-icon.svg";
 import MarketingIcon from "../assets/marketing-icon.svg";
 import BillingIcon from "../assets/billing-icon.svg";
 import ServicesImage from "../assets/services-image.svg";
+import ProjectManagementIcon from "../assets/project-management-icon.svg";
 
 const Services = () => {
   const [serviceCards, setServiceCards] = useState([
@@ -15,7 +16,7 @@ const Services = () => {
       cardIcon: CyberIcon,
       serviceName: "Cybersecurity",
       serviceDescription:
-        "An advanced automated cybersecurity reconnaissance tool designed to identify vulnerabilities in defense systems. It provides real-time threat detection and scheduled scans to protect critical defense",
+        "An advanced, automated cybersecurity reconnaissance tool designed to identify vulnerabilities in defense systems. It offers real-time threat detection and scheduled scans to safeguard critical defense infrastructure. In addition, we provide specialized services such as Red Teaming & Penetration Testing, Training & Simulation, Cyber Range Simulation, and AI-Driven Defense Systems.",
     },
     {
       cardIcon: ProgrammingIcon,
@@ -52,6 +53,12 @@ const Services = () => {
       serviceName: "Billing Services",
       serviceDescription:
         "Our Billing Services streamline your invoicing and payment processes, ensuring accuracy and efficiency in managing financial transactions.",
+    },
+    {
+      cardIcon: ProjectManagementIcon,
+      serviceName: "Project Management Services",
+      serviceDescription:
+        "At ME Business Development Consultancy, we specialize in delivering comprehensive project management solutions tailored to meet the unique needs of each client. From initial planning to final execution, our experienced team ensures that your projects are completed on time, within scope, and on budget, while maintaining the highest quality standards.",
     },
   ]);
 

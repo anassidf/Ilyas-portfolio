@@ -1,7 +1,7 @@
 import YigisanLogo from "../assets/yigitsan-image.svg";
 import LampLogo from "../assets/lamp-image.png";
 import FoodSoftLogo from "../assets/foodsoft-image.png";
-import HarmonicLogo from "../assets/harmonic-image.svg";
+import CngeLogo from "../assets/cnge-image.jpg";
 import ExtremeLabLogo from "../assets/xtremelab-image.png";
 
 const Collaborators = () => {
@@ -25,8 +25,8 @@ const Collaborators = () => {
             className="w-auto h-[40px] object-contain grayscale"
           />
           <img
-            src={HarmonicLogo}
-            alt="harmonic logo"
+            src={CngeLogo}
+            alt="cnge logo"
             className="w-auto h-[40px] object-contain grayscale"
           />
           <img
